@@ -17,13 +17,18 @@ Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma
 
 ```python
 law.obj_votacao()
-out: ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
+```
+Output:
+```
+['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
 ```
 
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
-
+```
+Output:
+```
        id                   nome partido  uf  ...       data   hora                                 objvotacao codsessao
 0  160554         Berinho Bantim    PSDB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
 1  141417             Edio Lopes    PMDB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
@@ -45,64 +50,11 @@ law.url
 ```python
 law.raw
 ```
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>@Resumo</th>
-      <th>@Data</th>
-      <th>@Hora</th>
-      <th>@ObjVotacao</th>
-      <th>@codSessao</th>
-      <th>orientacaoBancada</th>
-      <th>votos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-      <td>{'bancada': [{'@Sigla': 'PT', '@orientacao': '...</td>
-      <td>{'Deputado': [{'@Nome': 'Berinho Bantim', '@id...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Rejeitada a Emenda nº 26. Sim: 11; não: 275; a...</td>
-      <td>29/2/2012</td>
-      <td>19:09</td>
-      <td>DVS - DEM - EMENDA 26</td>
-      <td>4533</td>
-      <td>{'bancada': [{'@Sigla': 'PT', '@orientacao': '...</td>
-      <td>{'Deputado': [{'@Nome': 'Berinho Bantim', '@id...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Rejeitada a Emenda nº 43, objeto do Destaque p...</td>
-      <td>29/2/2012</td>
-      <td>18:48</td>
-      <td>DVS - PSDB - EMENDA 43</td>
-      <td>4533</td>
-      <td>{'bancada': [{'@Sigla': 'PT', '@orientacao': '...</td>
-      <td>{'Deputado': [{'@Nome': 'Berinho Bantim', '@id...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Rejeitado o art. 4º do Projeto original e mant...</td>
-      <td>29/2/2012</td>
-      <td>17:59</td>
-      <td>DVS - PSDB - ART. 4º DO PROJETO ORIGINAL (E SE...</td>
-      <td>4533</td>
-      <td>{'bancada': [{'@Sigla': 'PT', '@orientacao': '...</td>
-      <td>{'Deputado': [{'@Nome': 'Berinho Bantim', '@id...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+Output: 
+```
+                                             @Resumo  ...                                              votos
+0  Aprovada a Subemenda Substitutiva Global ofere...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
+1  Rejeitada a Emenda nº 26. Sim: 11; não: 275; a...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
+2  Rejeitada a Emenda nº 43, objeto do Destaque p...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
+3  Rejeitado o art. 4º do Projeto original e mant...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
+```
