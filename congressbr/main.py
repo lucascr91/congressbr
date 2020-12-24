@@ -1,6 +1,5 @@
 import pandas as pd 
 import pandas_read_xml as pdx
-from pandas_read_xml import auto_separate_tables
 import requests
 import re
 
