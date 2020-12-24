@@ -1,10 +1,17 @@
 # congressbr
 *Esse pacote é uma implementação em python do [pacote em R](https://github.com/duarteguilherme/congressbr) de mesmo nome*
 
+**Instalação**
+
+**congressbr** está disponível no PyPi e, assim, pode ser instalado pelo pip
+
+```bash
+pip install congressbr
+```
+
+**Como usar**
+
 Atualmente, o **congressbr** tem uma classe, chamada Cham_Votes, que permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
-
-**Como usar o congressbr**
-
 
 ```python
 from congressbr import *

@@ -8,7 +8,7 @@ setup(
   author = 'Lucas Cavalcanti Rodrigues',
   author_email = 'lucas.ecomg@gmail.com', 
   url = 'https://github.com/lucascr91/congressbr.git', 
-  download_url = 'https://github.com/lucascr91/congressbr/archive/v_0.0.2.tar.gz', 
+  download_url = 'https://github.com/lucascr91/congressbr/archive/v_0.0.3.tar.gz', 
   keywords = ['CONGRESS', 'DEMOCRACY', 'BRAZIL'], 
   install_requires=[
           'pandas',
