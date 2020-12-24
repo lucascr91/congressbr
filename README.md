@@ -23,100 +23,14 @@ out: ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs 
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
-```
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>nome</th>
-      <th>partido</th>
-      <th>uf</th>
-      <th>voto</th>
-      <th>orientacao_bancada</th>
-      <th>resumo</th>
-      <th>data</th>
-      <th>hora</th>
-      <th>objvotacao</th>
-      <th>codsessao</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>160554</td>
-      <td>Berinho Bantim</td>
-      <td>PSDB</td>
-      <td>RR</td>
-      <td>Sim</td>
-      <td>Sim</td>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>141417</td>
-      <td>Edio Lopes</td>
-      <td>PMDB</td>
-      <td>RR</td>
-      <td>Sim</td>
-      <td>Sim</td>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>73982</td>
-      <td>Luciano Castro</td>
-      <td>PR</td>
-      <td>RR</td>
-      <td>Sim</td>
-      <td>Sim</td>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>160531</td>
-      <td>Jhonatan de Jesus</td>
-      <td>PRB</td>
-      <td>RR</td>
-      <td>Sim</td>
-      <td>Sim</td>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>160668</td>
-      <td>Paulo Cesar Quartiero</td>
-      <td>DEM</td>
-      <td>RR</td>
-      <td>Sim</td>
-      <td>Não</td>
-      <td>Aprovada a Subemenda Substitutiva Global ofere...</td>
-      <td>28/2/2012</td>
-      <td>20:26</td>
-      <td>SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO</td>
-      <td>4531</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
+       id                   nome partido  uf  ...       data   hora                                 objvotacao codsessao
+0  160554         Berinho Bantim    PSDB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
+1  141417             Edio Lopes    PMDB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
+2   73982         Luciano Castro      PR  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
+3  160531      Jhonatan de Jesus     PRB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
+4  160668  Paulo Cesar Quartiero     DEM  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
+```
 
 
 Metadados estão disponíveis nos atributos da instância
