@@ -10,7 +10,7 @@ class Cham_Votes:
         self.year=year
         response=requests.get(self.url)
         if response.status_code!=200:
-            raise ValueError("A problem occurs when trying to download data. Status error code: {:d}".format(response.status_code))
+            raise ValueError("A problem occurs when trying to download data. Status error code: {:d}. Make sure this law exists.".format(response.status_code))
         else:
             pass
 
