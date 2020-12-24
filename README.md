@@ -1,15 +1,14 @@
 ### congressbr.py
-Esse pacote é uma implementação em python do pacote em R com o mesmo nome
+*Esse pacote é uma implementação em python do pacote em R com o mesmo nome*
 
-Atualmente, o pacote tem apenas uma classe, chamada Cham_Votes, que permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano. Abaixo exemplo mínimo:
+Atualmente, o **congressbr** tem uma classe, chamada Cham_Votes, que permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
+
+**Como usar o congressbr**
 
 
 ```python
 from congressbr import *
-```
 
-
-```python
 law=Cham_Votes(kind='PL', number='1992',year='2007')
 ```
 
@@ -18,41 +17,14 @@ Para obter o dado de votação, é preciso selecionar antes o objeto de votaçã
 
 ```python
 law.obj_votacao()
+out: ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
 ```
-
-
-
-
-    ['Subemenda Substitutiva Global De Plenário',
-     'Dvs - Dem - Emenda 26',
-     'Dvs - Psdb - Emenda 43',
-     'Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
-
-
-
 
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
 ```
-
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -153,36 +125,14 @@ Metadados estão disponíveis nos atributos da instância
 ```python
 law.url
 ```
-
-
-
-
-    'https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao?tipo=PL&numero=1992&ano=2007'
-
-
+`https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao?tipo=PL&numero=1992&ano=2007'`
 
 
 ```python
 law.raw
 ```
 
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
