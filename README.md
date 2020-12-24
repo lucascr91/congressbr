@@ -38,7 +38,7 @@ Output:
 ```
 
 
-Metadados estão disponíveis nos atributos da instância
+Metadados estão disponíveis como atributos da instância
 
 
 ```python
@@ -50,7 +50,6 @@ law.url
 ```python
 law.raw
 ```
-Output: 
 ```
                                              @Resumo  ...                                              votos
 0  Aprovada a Subemenda Substitutiva Global ofere...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
