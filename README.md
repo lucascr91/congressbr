@@ -12,7 +12,7 @@ from congressbr import *
 law=Cham_Votes(kind='PL', number='1992',year='2007')
 ```
 
-Para obter o dado de votação, é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`
+Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`
 
 
 ```python
