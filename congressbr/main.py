@@ -41,6 +41,7 @@ class Cham_Votes:
             return list(dict_obj.keys())
         else:
             return dict_obj
+            
     def get_data(self, obj):
         """
         This method returns votation data, after the user have selected the object of votation.
