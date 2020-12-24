@@ -18,7 +18,7 @@ Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma
 ```python
 law.obj_votacao()
 ```
-Output:
+
 ```
 ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
 ```
@@ -27,7 +27,7 @@ Output:
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
 ```
-Output:
+
 ```
        id                   nome partido  uf  ...       data   hora                                 objvotacao codsessao
 0  160554         Berinho Bantim    PSDB  RR  ...  28/2/2012  20:26  SUBEMENDA SUBSTITUTIVA GLOBAL DE PLENÁRIO      4531
@@ -44,7 +44,9 @@ Metadados estão disponíveis como atributos da instância
 ```python
 law.url
 ```
-`https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao?tipo=PL&numero=1992&ano=2007'`
+```
+'https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao?tipo=PL&numero=1992&ano=2007'
+```
 
 
 ```python
