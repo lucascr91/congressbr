@@ -16,16 +16,25 @@ class Cham_Votes:
 
     @property
     def url(self):
+        """
+        instance url
+        """
         url='https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx/ObterVotacaoProposicao?tipo={}&numero={}&ano={}'.format(self.kind, self.number, self.year)
         return url
     
     @property
     def raw(self):
+        """
+        raw data from XML file
+        """
         raw=pdx.read_xml(self.url,['proposicao', 'Votacoes', 'Votacao'])
         return raw
 
 
     def obj_votacao(self, only_keys=True):
+        """
+        Each votation is divided into a main text vote and amendment vote. This method returns the list of voting objects.
+        """
         obj=[re.sub(r'\s+', ' ',k.title().strip()) for k in self.raw['@ObjVotacao'].to_list()]
         dict_obj={k:v for v,k in enumerate(obj)}
         if only_keys:
@@ -33,6 +42,9 @@ class Cham_Votes:
         else:
             return dict_obj
     def get_data(self, obj):
+        """
+        This method returns votation data, after the user have selected the object of votation.
+        """
         index=self.obj_votacao(only_keys=False)[obj]
         orientacao=pd.DataFrame(self.raw.orientacaoBancada[index]['bancada'])
         orientacao.columns=['partido','orientacao_bancada']
