@@ -5,6 +5,36 @@ import re
 from tika import parser
 
 
+class All_Laws:
+    def __init__(self, kind="all", number="all", year="all"):
+        self.kind=kind
+        self.number=number
+        self.year=year
+
+    def get_data(self):
+        df=pd.read_pickle('data/all_laws.pkl')
+        if (self.kind=='all') & (self.number=='all') & (self.year=='all'):
+            return df
+        elif (self.kind=='all') & (self.number=='all'):
+            df=df[df['ano']==self.year]
+            return df
+        elif (self.kind=='all') & (self.year=='all'):
+            df=df[df['numero']==self.number]
+            return df
+        elif (self.year=='all') & (self.number=='all'):
+            df=df[df['tipo']==self.kind]
+            return df
+        elif (self.kind=='all'):
+            df=df[(df['ano']==self.year) & df['numero']==self.number]
+            return df
+        elif (self.number=='all'):
+            df=df[(df['ano']==self.year) & df['kind']==self.kind]
+            return df
+        elif (self.year=='all'):
+            df=df[(df['tipo']==self.kind) & df['numero']==self.number]
+            return df
+        
+
 class Cham_Votes:
     def __init__(self, kind, number, year):
         self.kind=kind
