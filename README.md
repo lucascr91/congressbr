@@ -134,4 +134,4 @@ dir(law)
 
 ## Como contribuir
 
-O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, haverá uma classe para cada serviço de dado. Para os serviços de dados do Senado, acesse: http://legis.senado.gov.br/dadosabertos/docs/ui/index.html#/ . Para a Câmara, acesse: https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx
+O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, os serviços de dados serão acessados através de métodos e atributos da classe **Law**. Para os serviços de dados do Senado, acesse: http://legis.senado.gov.br/dadosabertos/docs/ui/index.html#/ . Para a Câmara, acesse: https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx
