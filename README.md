@@ -9,13 +9,13 @@
 pip install congressbr
 ```
 
-## Uso
+## Informação geral
 
 Atualmente, o **congressbr** possui as seguintes classes:
 
 **Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
 
-### Exemplo:
+## Exemplo de uso
 
 ```python
 from congressbr import *
