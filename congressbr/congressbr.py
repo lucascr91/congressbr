@@ -3,6 +3,7 @@ import pandas_read_xml as pdx
 import requests
 import re
 from tika import parser
+import pkg_resources
 
 DATA_PATH = pkg_resources.resource_filename('congressbr', 'data/')
 DB_FILE = pkg_resources.resource_filename('congressbr', 'data/*pkl')
