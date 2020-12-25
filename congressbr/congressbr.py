@@ -36,8 +36,8 @@ class Laws:
         elif (self.year=='all'):
             df=df[(df['tipo']==self.kind) & (df['numero']==self.number)]
             return df
-        elif (self.year=='all'):
-            df=df[(df['tipo']==self.kind) & (df['numero']==self.number)]
+        elif (self.kind!='all') & (self.number!='all') & (self.year!='all'):
+            df=df[(df['tipo']==self.kind) & (df['numero']==self.number) & (df['ano']==self.year)]
             return df
         
 
@@ -139,8 +139,8 @@ class Law:
 
     @property
     def codProposicao(self):
-        tab=Laws(*self.__dict__).get_data()
-        return int(tab.codproposicao.value)
+        tab=Laws(**self.__dict__).get_data()
+        return int(tab.codproposicao.unique())        
 
     def __repr__(self):
         return self.title
