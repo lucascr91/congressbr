@@ -1,14 +1,16 @@
 from distutils.core import setup
 setup(
   name = 'congressbr',
-  packages = ['congressbr'], 
-  version = '0.0.3',
+  packages = ['congressbr'],
+  package_dir={'congressbr': 'congressbr/congressbr'},
+  package_data={'congressbr': ['data/*.pkl']},
+  version = '0.0.5',
   license='MIT',
   description = 'Easily download data from Brazilian Congress votations',
   author = 'Lucas Cavalcanti Rodrigues',
   author_email = 'lucas.ecomg@gmail.com', 
   url = 'https://github.com/lucascr91/congressbr.git', 
-  download_url = 'https://github.com/lucascr91/congressbr/archive/v_0.0.3.tar.gz', 
+  download_url = 'https://github.com/lucascr91/congressbr/archive/v_0.0.5.tar.gz', 
   keywords = ['CONGRESS', 'DEMOCRACY', 'BRAZIL'], 
   install_requires=[
           'pandas',
