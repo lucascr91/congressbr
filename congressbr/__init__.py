@@ -1,1 +1,1 @@
-from congressbr.congressbr import Cham_Votes, All_Laws
+from congressbr.congressbr import Laws, Law

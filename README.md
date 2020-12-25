@@ -25,7 +25,7 @@ A unidade básica de organização do pacote são as peças legislativas. Seguin
 ### Criando um banco de dados com os nomes de todos Projetos de Lei do período:
 ```python
 from congressbr import *
-laws=All_Laws(kind="PL")
+laws=Laws(kind="PL")
 laws.get_data()
 ```
 ```
@@ -43,8 +43,8 @@ laws.get_data()
 2115        251745   PL   3476  2004  12/05/2004
 ```
 ### Selecionando uma PL para ver os dados de votação na Câmara:
-```
-law=Cham_Votes(kind='PL', number='1992',year='2007')
+```python
+law=Law(kind='PL', number='1992',year='2007')
 ```
 Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`:
 
