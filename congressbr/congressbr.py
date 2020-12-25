@@ -6,7 +6,7 @@ from tika import parser
 import pkg_resources
 
 DATA_PATH = pkg_resources.resource_filename('congressbr', 'data/')
-DB_FILE = pkg_resources.resource_filename('congressbr', 'data/*pkl')
+DB_FILE = pkg_resources.resource_filename('congressbr', 'data/all_laws.pkl')
 
 class All_Laws:
     def __init__(self, kind="all", number="all", year="all"):
