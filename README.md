@@ -18,16 +18,35 @@ pip install congressbr
 
 Atualmente, o **congressbr** possui as seguintes classes:
 
-**Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
+**All_Laws:** dá acesso ao nome de todas as PLs, PECs, PDCs a PLPs votadas entre 1991 e 2019.
+**Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações da peça legislativa: tipo de legislação, número e ano.
 
 ## Exemplo de uso
 
+### Criando um banco de dados com os nomes de todos Projetos de Lei do período:
 ```python
 from congressbr import *
-
+laws=All_Laws(kind="PL")
+laws.get_data()
+```
+```
+     codproposicao tipo numero   ano datavotacao
+0            20976   PL   4580  1990  17/12/1991
+1           171333   PL     91  1991  18/12/1991
+2           180097   PL    638  1991  28/08/1991
+3           182971   PL    822  1991  28/11/1991
+4           182971   PL    822  1991  03/12/1991
+...            ...  ...    ...   ...         ...
+2111        140375   PL   2401  2003  21/01/2004
+2112        140375   PL   2401  2003  04/02/2004
+2113        140375   PL   2401  2003  05/02/2004
+2114        144047   PL   2546  2003  21/01/2004
+2115        251745   PL   3476  2004  12/05/2004
+```
+### Selecionando uma PL para ver os dados de votação na Câmara:
+```
 law=Cham_Votes(kind='PL', number='1992',year='2007')
 ```
-
 Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`:
 
 ```python
