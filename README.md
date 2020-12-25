@@ -19,8 +19,7 @@ from congressbr import *
 law=Cham_Votes(kind='PL', number='1992',year='2007')
 ```
 
-Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`
-
+Para obter os dados da PL é preciso selecionar antes o objeto de votação. Uma lista dos objetos de votação pode ser obtida com o método `obj_votacao`:
 
 ```python
 law.obj_votacao()
@@ -30,6 +29,40 @@ law.obj_votacao()
 ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
 ```
 
+### Orientação das bancadas:
+```python
+law.orientacao('Subemenda Substitutiva Global De Plenário')
+```
+
+```
+{'PT': 'Sim',
+ 'PMDB': 'Sim',
+ 'PSB': 'Liberado',
+ 'PTB': 'Liberado',
+ 'PCDOB': 'Liberado',
+ 'PSDB': 'Sim',
+ 'PSD': 'Liberado',
+ 'PR': 'Sim',
+ 'PTDOB': 'Sim',
+ 'PRP': 'Sim',
+ 'PHS': 'Sim',
+ 'PTC': 'Sim',
+ 'PSL': 'Sim',
+ 'PRTB': 'Sim',
+ 'PP': 'Sim',
+ 'DEM': 'Não',
+ 'PDT': 'Não',
+ 'PV': 'Liberado',
+ 'PPS': 'Liberado',
+ 'PSC': 'Sim',
+ 'PRB': 'Sim',
+ 'PSOL': 'Não',
+ 'PMN': 'Não',
+ 'MINORIA': 'Liberado',
+ 'GOV.': 'Sim'}
+```
+
+### Dados de votação:
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
@@ -65,4 +98,9 @@ law.raw
 1  Rejeitada a Emenda nº 26. Sim: 11; não: 275; a...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
 2  Rejeitada a Emenda nº 43, objeto do Destaque p...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
 3  Rejeitado o art. 4º do Projeto original e mant...  ...  {'Deputado': [{'@Nome': 'Berinho Bantim', '@id...
+```
+Para uma lista completa dos métodos e atributos da classe Cham_Votes, digite:
+
+```
+dir(law)
 ```
