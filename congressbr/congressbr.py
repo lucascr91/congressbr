@@ -4,6 +4,8 @@ import requests
 import re
 from tika import parser
 
+DATA_PATH = pkg_resources.resource_filename('congressbr', 'data/')
+DB_FILE = pkg_resources.resource_filename('congressbr', 'data/*pkl')
 
 class All_Laws:
     def __init__(self, kind="all", number="all", year="all"):
@@ -12,7 +14,7 @@ class All_Laws:
         self.year=year
 
     def get_data(self):
-        df=pd.read_pickle('congress/data/all_laws.pkl')
+        df=pd.read_pickle(DB_FILE)
         if (self.kind=='all') & (self.number=='all') & (self.year=='all'):
             return df
         elif (self.kind=='all') & (self.number=='all'):
