@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'congressbr',
   packages = ['congressbr'],
-  package_dir={'congressbr': 'congressbr/congressbr'},
+  package_dir={'congressbr': 'congressbr'},
   package_data={'congressbr': ['data/*.pkl']},
   version = '0.0.7',
   license='MIT',

@@ -3,3 +3,4 @@ setup.cfg
 setup.py
 congressbr/__init__.py
 congressbr/main.py
+congressbr/data/all_laws.pkl
