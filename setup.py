@@ -3,7 +3,7 @@ setup(
   name = 'congressbr',
   packages = ['congressbr'],
   package_dir={'congressbr': 'congressbr'},
-  package_data={'congressbr': ['congressbr/data/*.pkl']},
+  package_data={'congressbr': ['data/*.pkl']},
   version = '0.1.0',
   license='MIT',
   description = 'Easily download data from Brazilian Congress votations',

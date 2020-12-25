@@ -12,7 +12,7 @@ class All_Laws:
         self.year=year
 
     def get_data(self):
-        df=pd.read_pickle('data/all_laws.pkl')
+        df=pd.read_pickle('congress/data/all_laws.pkl')
         if (self.kind=='all') & (self.number=='all') & (self.year=='all'):
             return df
         elif (self.kind=='all') & (self.number=='all'):
