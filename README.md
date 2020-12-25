@@ -1,12 +1,10 @@
 # congressbr
 *Esse pacote é uma implementação em python do [pacote em R](https://github.com/duarteguilherme/congressbr) de mesmo nome*
 
-##### Sumário  
+<!-- ##### Sumário  
 [Instalação](#headers)  
 [Informação geral](#headers)  
-[Exemplo de uso](#headers)  
-
-
+[Exemplo de uso](#headers)   -->
 
 ## Instalação
 
