@@ -16,11 +16,10 @@ pip install congressbr
 
 ## Informação geral
 
-Atualmente, o **congressbr** possui as seguintes classes:
+A unidade básica de organização do pacote são as peças legislativas. Seguindo esse princípio, atualmente, o **congressbr** possui as seguintes classes:
 
-**All_Laws:** dá acesso ao nome de todas as PLs, PECs, PDCs a PLPs votadas entre 1991 e 2019. <br>
-**Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações da peça legislativa: tipo de legislação, número e ano.
-
+**Laws:** dá acesso ao nome de todas as PLs, PECs, PDCs a PLPs votadas entre 1991 e 2019. <br>
+**Law:** Informações de uma peça legislativa específica. A partir dessa classe é possível acessar o texto da lei, os dados de votação de parlamentares individuais, orientações das bancadas, etc.
 ## Exemplo de uso
 
 ### Criando um banco de dados com os nomes de todos Projetos de Lei do período:

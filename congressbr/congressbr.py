@@ -8,7 +8,7 @@ import pkg_resources
 DATA_PATH = pkg_resources.resource_filename('congressbr', 'data/')
 DB_FILE = pkg_resources.resource_filename('congressbr', 'data/all_laws.pkl')
 
-class All_Laws:
+class Laws:
     def __init__(self, kind="all", number="all", year="all"):
         self.kind=kind
         self.number=number
@@ -28,17 +28,20 @@ class All_Laws:
             df=df[df['tipo']==self.kind]
             return df
         elif (self.kind=='all'):
-            df=df[(df['ano']==self.year) & df['numero']==self.number]
+            df=df[(df['ano']==self.year) & (df['numero']==self.number)]
             return df
         elif (self.number=='all'):
-            df=df[(df['ano']==self.year) & df['kind']==self.kind]
+            df=df[(df['ano']==self.year) & (df['tipo']==self.kind)]
             return df
         elif (self.year=='all'):
-            df=df[(df['tipo']==self.kind) & df['numero']==self.number]
+            df=df[(df['tipo']==self.kind) & (df['numero']==self.number)]
+            return df
+        elif (self.year=='all'):
+            df=df[(df['tipo']==self.kind) & (df['numero']==self.number)]
             return df
         
 
-class Cham_Votes:
+class Law:
     def __init__(self, kind, number, year):
         self.kind=kind
         self.number=number
@@ -133,6 +136,11 @@ class Cham_Votes:
         response=requests.get(url)
         r = requests.get(url, stream=True)
         print(parser.from_buffer(r.content)['content'])
+
+    @property
+    def codProposicao(self):
+        tab=Laws(*self.__dict__).get_data()
+        return int(tab.codproposicao.value)
 
     def __repr__(self):
         return self.title
