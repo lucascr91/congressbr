@@ -11,7 +11,9 @@ pip install congressbr
 
 ## Como usar
 
-Atualmente, o **congressbr** tem uma classe, chamada Cham_Votes, que permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
+Atualmente, o **congressbr** possui as seguintes classes:
+
+**Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações: tipo de legislação, número e ano.
 
 ```python
 from congressbr import *
@@ -62,7 +64,7 @@ law.orientacao('Subemenda Substitutiva Global De Plenário')
  'GOV.': 'Sim'}
 ```
 
-### Dados de votação:
+### Dados da votação:
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
