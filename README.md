@@ -18,7 +18,7 @@ pip install congressbr
 
 Atualmente, o **congressbr** possui as seguintes classes:
 
-**All_Laws:** dá acesso ao nome de todas as PLs, PECs, PDCs a PLPs votadas entre 1991 e 2019.
+**All_Laws:** dá acesso ao nome de todas as PLs, PECs, PDCs a PLPs votadas entre 1991 e 2019. <br>
 **Cham_Votes:** permite fazer o download dos dados de votação na câmara dos deputados a partir de três informações da peça legislativa: tipo de legislação, número e ano.
 
 ## Exemplo de uso
