@@ -2,6 +2,8 @@ import pandas as pd
 import pandas_read_xml as pdx
 import requests
 import re
+from tika import parser
+
 
 class Cham_Votes:
     def __init__(self, kind, number, year):
@@ -25,11 +27,14 @@ class Cham_Votes:
     @property
     def raw(self):
         """
-        raw data from XML file
+        Raw data from XML file
         """
         raw=pdx.read_xml(self.url,['proposicao', 'Votacoes', 'Votacao'])
         return raw
 
+    @property
+    def title(self):
+        return "{} {}/{}".format(self.kind, self.number, self.year)
 
     def obj_votacao(self, only_keys=True):
         """
@@ -41,31 +46,20 @@ class Cham_Votes:
             return list(dict_obj.keys())
         else:
             return dict_obj
-            
-    def get_data(self, obj):
+
+    def orientacao(self, obj):
         """
-        This method returns votation data, after the user have selected the object of votation.
+        Returns dictionary with voting guidance to parties and groups
         """
         index=self.obj_votacao(only_keys=False)[obj]
+        global orientacao
         orientacao=pd.DataFrame(self.raw.orientacaoBancada[index]['bancada'])
         orientacao.columns=['partido','orientacao_bancada']
-        cham_votes=pd.DataFrame(self.raw.votos[index]['Deputado'])
-        cham_votes.columns=['nome','id','partido','uf','voto']
-        for col in cham_votes.columns:
-            try:
-                cham_votes[col]=cham_votes[col].str.strip()
-            except:
-                pass
-
         for col in orientacao.columns:
             try:
                 orientacao[col]=orientacao[col].str.strip()
             except:
                 pass
-            
-        for data in [cham_votes,orientacao]:
-            data['partido']=data['partido'].apply(lambda x: x.strip())
-
         group_parties=[k for k in orientacao.partido.to_list() if bool(re.search(r'[A-Z][a-z]+[A-Z]',k))]
         single_parties=[k for k in orientacao.partido.to_list() if not bool(re.search(r'[A-Z][a-z]+[A-Z]',k))]
         parties_dict={k:k for k in single_parties}
@@ -74,7 +68,25 @@ class Cham_Votes:
         orientacao=orientacao.explode('partido')
         orientacao.partido=orientacao.partido.str.upper()
         orientacao_dict=orientacao.set_index("partido").to_dict()['orientacao_bancada']
-        cham_votes['orientacao_bancada']=cham_votes['partido'].map(orientacao_dict)
+        return orientacao_dict
+
+    def get_data(self, obj):
+        """
+        This method returns votation data, after the user have selected the object of votation.
+        """
+        index=self.obj_votacao(only_keys=False)[obj]
+        cham_votes=pd.DataFrame(self.raw.votos[index]['Deputado'])
+        cham_votes.columns=['nome','id','partido','uf','voto']
+        for col in cham_votes.columns:
+            try:
+                cham_votes[col]=cham_votes[col].str.strip()
+            except:
+                pass
+            
+        for data in [cham_votes,orientacao]:
+            data['partido']=data['partido'].apply(lambda x: x.strip())
+
+        cham_votes['orientacao_bancada']=cham_votes['partido'].map(self.orientacao(obj))
 
         for col in ['@Resumo','@Data','@Hora','@ObjVotacao','@codSessao']:
             cham_votes[col.lower().replace('@','')]=self.raw.loc[index,col]
@@ -82,3 +94,16 @@ class Cham_Votes:
         cham_votes=cham_votes.reindex(['id','nome', 'partido', 'uf', 'voto', 'orientacao_bancada', 'resumo',
          'data', 'hora', 'objvotacao', 'codsessao'], axis=1)
         return cham_votes
+
+    def get_text(self):
+        url='https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=501938&filename={}+{}/{}'.format(self.kind, self.number, self.year)
+        response=requests.get(url)
+        r = requests.get(url, stream=True)
+        print(parser.from_buffer(r.content)['content'])
+
+    def __repr__(self):
+        return self.title
+    
+    def __str__(self):
+        return self.title
+

@@ -13,7 +13,8 @@ setup(
   install_requires=[
           'pandas',
           'pandas_read_xml',
-          'requests'
+          'requests',
+          'tika'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
