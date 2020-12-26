@@ -5,7 +5,6 @@ Sumário
 -----------------
 
 <!-- vim-markdown-toc GFM -->
-
 - [congressbr](#congressbr)
   - [Sumário](#sumário)
   - [Instalação](#instalação)
@@ -145,6 +144,6 @@ dir(law)
 
 ## Como contribuir
 
-O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, os serviços de dados serão acessados através de métodos e atributos de classe que representam categorias de serviço. A classe **Law** foi criada para cobrir as peças legislativas. É possível que, futuramente, seja criada uma classe **Bill** para cobrir dados de despesas dos parlamentares.
+O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, os serviços de dados serão acessados através de métodos e atributos de classes que representam categorias de serviço. A classe **Law** foi criada para cobrir as peças legislativas. É possível que, futuramente, seja criada uma classe **Bill** para cobrir dados de despesas dos parlamentares.
 
 Para os serviços de dados do Senado, acesse: http://legis.senado.gov.br/dadosabertos/docs/ui/index.html#/ . Para a Câmara, acesse: https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx
