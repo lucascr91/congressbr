@@ -16,7 +16,7 @@ Sumário
     - [Orientação das bancadas:](#orientação-das-bancadas)
     - [Dados da votação:](#dados-da-votação)
   - [Como contribuir](#como-contribuir)
-
+<!-- vim-markdown-toc -->
 ## Instalação
 
 **congressbr** está disponível no PyPi e, assim, pode ser instalado pelo pip
