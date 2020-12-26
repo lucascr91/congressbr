@@ -1,10 +1,21 @@
 # congressbr
 *Esse pacote é uma implementação em python do [pacote em R](https://github.com/duarteguilherme/congressbr) de mesmo nome*
 
-<!-- ##### Sumário  
-[Instalação](#headers)  
-[Informação geral](#headers)  
-[Exemplo de uso](#headers)   -->
+Sumário
+-----------------
+
+<!-- vim-markdown-toc GFM -->
+
+- [congressbr](#congressbr)
+  - [Sumário](#sumário)
+  - [Instalação](#instalação)
+  - [Informação geral](#informação-geral)
+  - [Exemplo de uso](#exemplo-de-uso)
+    - [Criando um banco de dados com os nomes de todos Projetos de Lei do período:](#criando-um-banco-de-dados-com-os-nomes-de-todos-projetos-de-lei-do-período)
+    - [Selecionando uma PL:](#selecionando-uma-pl)
+    - [Orientação das bancadas:](#orientação-das-bancadas)
+    - [Dados da votação:](#dados-da-votação)
+  - [Como contribuir](#como-contribuir)
 
 ## Instalação
 
@@ -42,7 +53,7 @@ laws.get_data()
 2114        144047   PL   2546  2003  21/01/2004
 2115        251745   PL   3476  2004  12/05/2004
 ```
-### Selecionando uma PL para ver os dados de votação na Câmara:
+### Selecionando uma PL:
 ```python
 law=Law(kind='PL', number='1992',year='2007')
 ```

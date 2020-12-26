@@ -131,7 +131,8 @@ class Law:
          'data', 'hora', 'objvotacao', 'codsessao'], axis=1)
         return cham_votes
 
-    def get_text(self):
+    @property
+    def text(self):
         url='https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=501938&filename={}+{}/{}'.format(self.kind, self.number, self.year)
         response=requests.get(url)
         r = requests.get(url, stream=True)
