@@ -11,10 +11,10 @@ Sumário
   - [Instalação](#instalação)
   - [Informação geral](#informação-geral)
   - [Exemplo de uso](#exemplo-de-uso)
-    - [Criando um banco de dados com os nomes de todos Projetos de Lei do período:](#criando-um-banco-de-dados-com-os-nomes-de-todos-projetos-de-lei-do-período)
-    - [Selecionando uma PL:](#selecionando-uma-pl)
-    - [Orientação das bancadas:](#orientação-das-bancadas)
-    - [Dados da votação:](#dados-da-votação)
+    - [Criando um banco de dados com os nomes de todos Projetos de Lei do período](#criando-um-banco-de-dados-com-os-nomes-de-todos-projetos-de-lei-do-período)
+    - [Selecionando uma PL](#selecionando-uma-pl)
+    - [Orientação das bancadas](#orientação-das-bancadas)
+    - [Dados da votação](#dados-da-votação)
   - [Como contribuir](#como-contribuir)
 <!-- vim-markdown-toc -->
 ## Instalação
@@ -33,7 +33,7 @@ A unidade básica de organização do pacote são as peças legislativas. Seguin
 **Law:** Informações de uma peça legislativa específica. A partir dessa classe é possível acessar o texto da lei, os dados de votação de parlamentares individuais, orientações das bancadas, etc.
 ## Exemplo de uso
 
-### Criando um banco de dados com os nomes de todos Projetos de Lei do período:
+### Criando um banco de dados com os nomes de todos Projetos de Lei do período
 ```python
 from congressbr import *
 laws=Laws(kind="PL")
@@ -53,7 +53,7 @@ laws.get_data()
 2114        144047   PL   2546  2003  21/01/2004
 2115        251745   PL   3476  2004  12/05/2004
 ```
-### Selecionando uma PL:
+### Selecionando uma PL
 ```python
 law=Law(kind='PL', number='1992',year='2007')
 ```
@@ -67,7 +67,7 @@ law.obj_votacao()
 ['Subemenda Substitutiva Global De Plenário','Dvs - Dem - Emenda 26','Dvs - Psdb - Emenda 43','Dvs - Psdb - Art. 4º Do Projeto Original (E Seus Correspondentes.)...']
 ```
 
-### Orientação das bancadas:
+### Orientação das bancadas
 ```python
 law.orientacao('Subemenda Substitutiva Global De Plenário')
 ```
@@ -100,7 +100,7 @@ law.orientacao('Subemenda Substitutiva Global De Plenário')
  'GOV.': 'Sim'}
 ```
 
-### Dados da votação:
+### Dados da votação
 ```python
 df=law.get_data('Subemenda Substitutiva Global De Plenário')
 df.head()
@@ -145,4 +145,6 @@ dir(law)
 
 ## Como contribuir
 
-O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, os serviços de dados serão acessados através de métodos e atributos da classe **Law**. Para os serviços de dados do Senado, acesse: http://legis.senado.gov.br/dadosabertos/docs/ui/index.html#/ . Para a Câmara, acesse: https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx
+O objetivo do **congressbr** é facilitar o acesso aos dados disponibilizados pelos APIs do Congresso. No desenho atual do pacote, os serviços de dados serão acessados através de métodos e atributos de classe que representam categorias de serviço. A classe **Law** foi criada para cobrir as peças legislativas. É possível que, futuramente, seja criada uma classe **Bill** para cobrir dados de despesas dos parlamentares.
+
+Para os serviços de dados do Senado, acesse: http://legis.senado.gov.br/dadosabertos/docs/ui/index.html#/ . Para a Câmara, acesse: https://www.camara.leg.br/SitCamaraWS/Proposicoes.asmx
